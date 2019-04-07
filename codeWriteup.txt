@@ -1,0 +1,19 @@
+
+
+i will make struct for cashier , customer
+
+cashier have method serve() which take customer as an argument and serve it 
+
+through command line it taking values of no of customer , no of cashier and 
+time each customer will take
+
+i will create one buffered channel for customers which act as queue in the bank
+
+which will handeled by one Goroutine the goroutine is queue_manager which take 
+care of that any cashier is Not Occupied than pass it a customer and run a goroutine 
+for serve function of that cashier with that perticuler customer 
+
+all the cashier sync will be handled using channels if after serving customer cashier will notify 
+queue_manager by channel and queue_manager will assign next customer to it.
+and manager also take care of running goroutines for serve by cashiers and wait for them also using 
+channel.
